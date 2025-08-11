@@ -1,0 +1,99 @@
+@font-face {
+     font-family: 'ADLaM Display Regular';
+     font-style: normal;
+     font-weight: normal;
+     src: local('ADLaM Display Regular'),
+          url('../../fonts/ADLaMDisplay-Regular.woff') format('woff');
+ }
+
+ body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Ngăn cuộn nếu ảnh quá lớn */
+}
+ .left-items{
+     margin-left: 30px; /* Lùi toàn bộ các item bên phải vào 20px */
+     cursor: pointer;
+ }
+ .right-items {
+     display: flex;
+     justify-content: space-between; /* Chia đều các item */
+     gap: 100px; /* Khoảng cách giữa các item */
+     margin-right: 50px; /* Lùi toàn bộ các item bên phải vào 20px */
+ }
+
+ #taskbar {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     height: 50px;
+     /* background-color: #3e7944; */
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+     z-index: 100;
+     overflow: hidden; /* Ẩn các phần bị tràn ra ngoài */
+     padding: 10px;
+ }
+ 
+ .taskbar-item span{
+     font-family: 'ADLaM Display Regular', sans-serif;
+     font-weight: normal;
+     font-size: 26px;
+     color: #ffde59;
+     cursor: pointer;
+ }
+ #taskbar-hidden{
+    position: fixed;
+    top: 70px;
+    right: -300px; /* Thanh task bar ẩn ngoài màn hình */
+    width: 300px;
+    height: 100%;
+    background-color: #3e79449c;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out; /* Hiệu ứng trượt */
+    z-index: 999;
+ }
+ 
+ #taskbar-hidden.open {
+    right: 0; /* Đưa thanh vào màn hình */
+}
+
+ 
+ #logo-item{
+     width: 120px;
+     color: #ffde59;
+     cursor: pointer;
+ }
+ 
+ .container-img1-header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giúp ảnh không bị méo */
+ }
+ .fa-burger {
+    font-size: 35px; /* Tăng kích thước */
+    color: #ffde59; /* Đặt màu sắc */
+    margin: 35px; /* Tạo khoảng cách */
+}
+
+ @media (max-width: 769px) {
+    .right-items {
+        display: none;
+    }
+
+}
+@media (min-width: 769px) {
+    #icon-hamberger {
+      display: none;
+
+    }
+    #taskbar-hidden{
+        display: none;
+    }
+
+}
